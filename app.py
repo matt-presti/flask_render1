@@ -4,7 +4,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # db connection string
-db_conn = "postgresql://bball_render_practice_user:zDS09VBqss7InRDeoCxv1fHJpebyIhBf@dpg-cslsa3lumphs73bhvjr0-a/bball_render_practice")
+db_conn = "postgresql://bball_render_practice_user:zDS09VBqss7InRDeoCxv1fHJpebyIhBf@dpg-cslsa3lumphs73bhvjr0-a/bball_render_practice"
 
 @app.route('/db_test')
 def testing():
