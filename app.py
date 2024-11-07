@@ -34,8 +34,8 @@ def create_tables():
 		''')
 	
 	# Save changes and cleanup
-	con.commit()
-	con.close()
+	conn.commit()
+	conn.close()
 	return "Basketball Table Created Successfully"
 
 @app.route('/db_insert')
@@ -50,8 +50,10 @@ def insert_db():
 	('Nikola', 'Jokic', 'Denver', 'Nuggets', 15),
 	('Kawhi', 'Leonard', 'Los Angeles', 'Clippers', 2);
 	''')
-	con.commit()
+	conn.commit()
 	conn.close()
+	
+	return "Data Inserted Successfully"
 	
 @app.route('/db_select')
 def select_db():
@@ -75,7 +77,7 @@ def select_db():
 		for info in player:
 			html_table += '<td>{}</td>'.format(info)
 		html_table += '</tr>'
-	html_table += '</table' 
+	html_table += '</table>' 
 	return html_table
 
 
@@ -88,9 +90,13 @@ def drop_db():
 	cur.execute('''
 	DROP TABLE Basketball;
 	''')
-	con.commit()
+	conn.commit()
 	conn.close()
 	return "Basketball Table Dropped"
+
+if __name__ == '__main__':
+    app.run()
+
 	
 	
 	
